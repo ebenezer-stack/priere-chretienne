@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import '../../providers/prayer_provider.dart';
 import '../../utils/theme.dart';
 import '../history/history_screen.dart';
@@ -50,25 +49,12 @@ class ResultScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: MarkdownBody(
-                      data: prov.content,
-                      styleSheet: MarkdownStyleSheet(
-                        blockSpacing: 30.0,
-                        p: GoogleFonts.outfit(
-                          fontSize: 16,
-                          height: 1.8,
-                          color: AppTheme.midnight,
-                        ),
-                        h1: GoogleFonts.outfit(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: AppTheme.gold,
-                        ),
-                        h2: GoogleFonts.outfit(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.midnight,
-                        ),
+                    child: SelectableText(
+                      prov.content,
+                      style: GoogleFonts.outfit(
+                        fontSize: 16,
+                        height: 1.8,
+                        color: AppTheme.midnight,
                       ),
                     ),
                   ),
